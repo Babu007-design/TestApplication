@@ -1,0 +1,25 @@
+<div class="row">
+<div class="col align-content-center">
+    <input class="btn btn-primary" type='file' (change)="readURL($event);" accept="image/*" required/>
+</div>
+<div class="col align-content-center">
+    <div class="row">
+        <img class="w-25 h-25" id="blah" [src]="imageSrc || 'http://placehold.it/180'" alt="your image" />
+    </div>
+    <div class="row-cols-6">
+        <button class="btn btn-primary" (click)="uploadfile($event)">Upload</button>
+    </div> 
+</div>
+</div>
+
+
+
+
+        <!-- <div class="position-absolute top-50 start-50 translate-middle"> -->
+
+
+
+
+
+
+
