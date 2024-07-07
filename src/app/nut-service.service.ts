@@ -9,7 +9,7 @@ export class NutServiceService {
   model: Observable<Object> | undefined;
 
   constructor(private http : HttpClient) { }
-  private url = 'http://localhost:3000/Spice';
+  private url = 'http://localhost:3041/Products';
 
   getNutImages():Observable<any>{
     this.model = this.http.get(this.url);

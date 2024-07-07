@@ -1,4 +1,10 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+
+
+
+
+<div class="container">
+  <nav class="navbar navbar-expand-sm bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">NUTS&SPICES</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,19 +20,19 @@
               PRODUCTS
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="Admin">NUTS</a></li>
+              <li><a class="dropdown-item disabled" aria-disabled="true" routerLink="Admin">NUTS</a></li>
               <li><a class="dropdown-item" href="#">SPICES</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">DRY FRUITS</a></li>
             </ul>
           </li>
         </ul>
-        <ul class="navbar-nav align-items-end mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ABOUT US</a>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item p-md-1">
+            <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#AboutUsmodal" aria-current="page" href="#">ABOUT US</a>
           </li>
-          <li class="d-flex justify-content-end nav-item">
-            <a class="nav-link active bg-danger rounded m-2" aria-current="page" href="#">CONTACT US</a>
+          <li class="d-flex nav-item p-md-1">
+            <a class="nav-link active rounded m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" aria-current="page" href="#">CONTACT US</a>
           </li>
           </ul>
         <form class="d-flex" role="search">
@@ -36,10 +42,9 @@
       </div>
     </div>
   </nav>
+</div>
 
-  <!-- <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar" style="width: 25%"></div>
-  </div> -->
+
 
 
 <div>
@@ -50,17 +55,66 @@
 <div class="container">
      <div class="row">
      <div class="card m-1" style="width: 18rem;" *ngFor="let abc of results">
-    <img src={{abc.imagedata}} class="card-img-top" alt="...">
+    <img src={{abc.ProductImage}} class="card-img-top" alt="...">
       <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">{{abc.ProductName}}</h5>
+    <p class="card-text">{{abc.ProductDetails}}</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
      </div>
+
+    </div>
+    <div>
+      <a mat-button href="https://wa.me/7288942322" target="_blank">Chat with us on WhatsApp</a>
+      <a mat-button href="sms:+917288942322?body=Hello%20from%20my%20website" target="_blank">Send SMS</a>
+
     </div>
 </div>
 
 
+<!-- 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button> -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">CONTACT INFORMATION</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3>Phone Number :1234567899</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="AboutUsmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">ABOUT US</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-wrap">
+        <p>content adout us</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+      </div>
+    </div>
+  </div>
+</div>
    
 
   
